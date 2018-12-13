@@ -12,11 +12,18 @@
 	</definition>
 
 	<!-- BaseLeft Definition -->
-
 	<definition name="baseLayoutLeft" template="/views/layout/BaseLayoutLeft.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="header" value="/views/layout/header.jsp" />
 		<put-attribute name="left" value="/views/layout/left.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/views/layout/footer.jsp" />
+	</definition>
+
+	<!-- BaseNoSlider Definition -->
+	<definition name="baseLayoutNoSilder" template="/views/layout/BaselayoutNoSlider.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/views/layout/headerNoSilder.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/views/layout/footer.jsp" />
 	</definition>
@@ -27,5 +34,10 @@
 		<put-attribute name="body" value="/views/home/home.jsp" />
 	</definition>
 
+	<!--login -->
+	<definition name="login" extends="baseLayoutNoSilder">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="body" value="/views/users/login.jsp" />
+	</definition>
 
 </tiles-definitions>
