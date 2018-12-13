@@ -43,7 +43,7 @@ public class Product {
 	private List<Review> reviews;
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "cart_details", joinColumns = { @JoinColumn(name = "id") })
-	private List<CartDetails> cartDetails;	
+	private List<CartDetails> cartDetails;
 
 	public List<CartDetails> getCartDetails() {
 		return cartDetails;
