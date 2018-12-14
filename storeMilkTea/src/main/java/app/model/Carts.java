@@ -25,8 +25,8 @@ public class Carts {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinTable(name="cart_details",joinColumns={@JoinColumn(name="id")})
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "cart_details", joinColumns = { @JoinColumn(name = "id") })
 	private List<CartDetails> cartDetails;
 
 	public List<CartDetails> getCartDetails() {

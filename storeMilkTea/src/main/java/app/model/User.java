@@ -23,6 +23,8 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", length = 11, nullable = false, unique = true)
 	private int user_id;
+	@Column(name = "username", length = 45, nullable = false, unique = true)
+	private String userName;
 	@Column(name = "email", length = 45, nullable = false)
 	private String Email;
 	@Column(name = "password", length = 45, nullable = false)
@@ -82,6 +84,14 @@ public class User {
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 }

@@ -23,9 +23,8 @@ public class Role {
 	private int role_Id;
 	@Column(name = "name", length = 45, nullable = true)
 	private String name;
-	
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinTable(name="user",joinColumns={@JoinColumn(name="id")})
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "user", joinColumns = { @JoinColumn(name = "id") })
 	private List<User> users;
 
 	public List<User> getUsers() {
