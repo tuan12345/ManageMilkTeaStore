@@ -1,7 +1,8 @@
-package app.controller;
+package app.controller.client;
 
 import java.util.Locale;
 
+import app.controller.BaseController;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

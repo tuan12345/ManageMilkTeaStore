@@ -11,6 +11,7 @@
 			</bean>
 		</property>
 	</bean>
+
 	<bean id="LoginService" parent="baseTransactionProxy">
 		<property name="target">
 			<bean class="app.service.impl.LoginServiceImpl">
