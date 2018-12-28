@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Base Definition -->
+	<definition name="baseLayout" template="/views/client/layout/baseLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/views/client/layout/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/views/client/layout/footer.jsp" />
+	</definition>
+
+	<!-- BaseLeft Definition -->
+
+	<definition name="baseLayoutLeft" template="/views/client/layout/BaseLayoutLeft.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/views/client/layout/header.jsp" />
+		<put-attribute name="left" value="/views/client/layout/left.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/views/client/layout/footer.jsp" />
+	</definition>
+	
+	<!-- BaseNoSlider Definition -->
+
+	<definition name="baseLayoutNoSilder" template="/views/client/layout/BaselayoutNoSlider.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/views/client/layout/headerNoSilder.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/views/client/layout/footer.jsp" />
+	</definition>
+
+	<!-- home -->
+	<definition name="home" extends="baseLayoutLeft">
+		<put-attribute name="title" value="HOME" />
+		<put-attribute name="body" value="/views/client/views/home.jsp" />
+	</definition>
+	
+	<!--login  -->
+		<definition name="login" extends="baseLayoutNoSilder">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="body" value="/views/client/views/login.jsp" />
+	</definition>
+
+
+</tiles-definitions>

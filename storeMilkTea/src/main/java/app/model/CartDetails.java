@@ -1,81 +1,79 @@
 package app.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class CartDetails {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", length = 11, nullable = false, unique = true)
-	private int id;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "product_id", nullable = false)
-	private Product product;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "cart_id", nullable = false)
-	private Carts carts;
-	@Column(name = "quantium", length = 11, nullable = true)
-	private Integer quantium;
-	@Column(name = "Size", length = 1, nullable = true)
-	private String Size;
-	@Column(name = "statust", nullable = true)
-	private Integer statust;
 
-	public int getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", length = 11, nullable = false, unique = true)
+    private int id;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
 
-	public Product getProduct() {
-		return product;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cart_id", nullable = false)
+    private Carts carts;
 
-	public void setProduct(Product product) {
-		this.product = product;
-	}
+    @Column(name = "quantium", length = 11, nullable = true)
+    private Integer quantium;
 
-	public Carts getCarts() {
-		return carts;
-	}
+    @Column(name = "Size", length = 1, nullable = true)
+    private String Size;
 
-	public void setCarts(Carts carts) {
-		this.carts = carts;
-	}
+    @Column(name = "statust", nullable = true)
+    private Integer statust;
 
-	public Integer getQuantium() {
-		return quantium;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setQuantium(Integer quantium) {
-		this.quantium = quantium;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getSize() {
-		return Size;
-	}
+    public Product getProduct() {
+        return product;
+    }
 
-	public void setSize(String size) {
-		Size = size;
-	}
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 
-	public Integer getStatust() {
-		return statust;
-	}
+    public Carts getCarts() {
+        return carts;
+    }
 
-	public void setStatust(Integer statust) {
-		this.statust = statust;
-	}
+    public void setCarts(Carts carts) {
+        this.carts = carts;
+    }
+
+    public Integer getQuantium() {
+        return quantium;
+    }
+
+    public void setQuantium(Integer quantium) {
+        this.quantium = quantium;
+    }
+
+    public String getSize() {
+        return Size;
+    }
+
+    public void setSize(String size) {
+        Size = size;
+    }
+
+    public Integer getStatust() {
+        return statust;
+    }
+
+    public void setStatust(Integer statust) {
+        this.statust = statust;
+    }
 
 }
