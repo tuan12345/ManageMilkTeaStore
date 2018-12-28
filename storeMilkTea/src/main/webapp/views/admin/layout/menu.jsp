@@ -62,18 +62,6 @@
                     <p>Typography</p>
                 </a>
             </li>
-            <li>
-                <a href="./rtl.html">
-                    <i class="tim-icons icon-world"></i>
-                    <p>RTL Support</p>
-                </a>
-            </li>
-            <li class="active-pro">
-                <a href="./upgrade.html">
-                    <i class="tim-icons icon-spaceship"></i>
-                    <p>Upgrade to PRO</p>
-                </a>
-            </li>
         </ul>
     </div>
 </div>

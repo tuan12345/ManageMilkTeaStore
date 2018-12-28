@@ -1,4 +1,4 @@
-package app.dto;
+package app.bean;
 
 import java.util.ArrayList;
 import java.util.Collection;

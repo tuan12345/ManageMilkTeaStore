@@ -1,6 +1,17 @@
-package app.dto;
+package app.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(value = { "roles", "authorities" })
 public class UserInfo {
+
 	private Integer id;
 	private String name;
 	private String userName;
@@ -45,4 +56,12 @@ public class UserInfo {
 	public void setRole(RoleInfo role) {
 		this.role = role;
 	}
+
+//	public List<GrantedAuthority> getAuthorities() {
+//		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+//		for (String role : roles) {
+//			authorities.add(new SimpleGrantedAuthority(role));
+//		}
+//		return authorities;
+//	}
 }
