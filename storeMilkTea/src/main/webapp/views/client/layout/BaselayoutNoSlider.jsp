@@ -13,37 +13,37 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<spring:url value="/assets/css/bootstrap.min.css" var="bootstrapCss" />
-<spring:url value="/assets/css/animate.css" var="animateCss" />
-<spring:url value="/assets/css/jquery-ui.min.css" var="jqueyryUiCss" />
-<spring:url value="/assets/css/meanmenu.min.css" var="meanmenuCss" />
-<spring:url value="/assets/css/owl.carousel.css" var="carouselCss" />
-<spring:url value="/assets/lib/css/nivo-slider.css" var="nivosliderCss" />
-<spring:url value="/assets/css/font-awesome.min.css"
+<spring:url value="/client/assets/css/bootstrap.min.css" var="bootstrapCss" />
+<spring:url value="/client/assets/css/animate.css" var="animateCss" />
+<spring:url value="/client/assets/css/jquery-ui.min.css" var="jqueyryUiCss" />
+<spring:url value="/client/assets/css/meanmenu.min.css" var="meanmenuCss" />
+<spring:url value="/client/assets/css/owl.carousel.css" var="carouselCss" />
+<spring:url value="/client/assets/lib/css/nivo-slider.css" var="nivosliderCss" />
+<spring:url value="/client/assets/css/font-awesome.min.css"
 	var="fontCss" />
-<spring:url value="/assets/customCss/style.css" var="styleCss" />
-<spring:url value="/assets/css/responsive.css" var="responsiveCss" />
-<spring:url value="/assets/js/vendor/modernizr-2.8.3.min.js"
+<spring:url value="/client/assets/customCss/style.css" var="styleCss" />
+<spring:url value="/client/assets/css/responsive.css" var="responsiveCss" />
+<spring:url value="/client/assets/js/vendor/modernizr-2.8.3.min.js"
 	var="modernizrJs" />
-	<spring:url value="/assets/js/vendor/jquery-1.12.0.min.js"
+	<spring:url value="/client/assets/js/vendor/jquery-1.12.0.min.js"
 	var="jqueyMinJs" />
-	<spring:url value="/assets/js/bootstrap.min.js"
+	<spring:url value="/client/assets/js/bootstrap.min.js"
 	var="bootstrapMinJs" />
-	<spring:url value="/assets/js/owl.carousel.min.js"
+	<spring:url value="/client/assets/js/owl.carousel.min.js"
 	var="owlcarouselminJs" />
-	<spring:url value="/assets/js/jquery.meanmenu.js"
+	<spring:url value="/client/assets/js/jquery.meanmenu.js"
 	var="jquerymeanmenuJs" />
-	<spring:url value="/assets/js/jquery-ui.min.js"
+	<spring:url value="/client/assets/js/jquery-ui.min.js"
 	var="jqueryuiminJs" />
-	<spring:url value="/assets/lib/js/jquery.nivo.slider.pack.js"
+	<spring:url value="/client/assets/lib/js/jquery.nivo.slider.pack.js"
 	var="jquerynivosliderpackJs" />
-	<spring:url value="/assets/lib/js/nivo-active.js"
+	<spring:url value="/client/assets/lib/js/nivo-active.js"
 	var="nivoactiveJs" />
-	<spring:url value="/assets/js/wow.min.js"
+	<spring:url value="/client/assets/js/wow.min.js"
 	var="wowminJs" />
-	<spring:url value="/assets/js/plugins.js"
+	<spring:url value="/client/assets/js/plugins.js"
 	var="pluginsJs" />
-	<spring:url value="/assets/js/main.js"
+	<spring:url value="/client/assets/js/main.js"
 	var="mainJs" />
 	
 <link rel="stylesheet" href="${bootstrapCss}" />
