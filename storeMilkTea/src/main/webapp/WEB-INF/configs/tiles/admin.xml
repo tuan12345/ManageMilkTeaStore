@@ -2,5 +2,51 @@
 <!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-    <definition></definition>
+    <definition name="adminBaseLayout" template="/views/admin/layout/baseLayout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="menu" value="/views/admin/layout/menu.jsp" />
+        <put-attribute name="header" value="/views/admin/layout/header.jsp" />
+        <put-attribute name="titleHeader" value="" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/views/admin/layout/footer.jsp" />
+        <put-list-attribute name="stylesheets">
+            <!--     Fonts and icons     -->
+            <add-attribute value="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"/>
+            <add-attribute value="https://use.fontawesome.com/releases/v5.0.6/css/all.css"/>
+            <!-- Nucleo Icons -->
+            <add-attribute value="/admin/assets/css/nucleo-icons.css"/>
+            <!-- CSS Files -->
+            <add-attribute value="/admin/assets/css/black-dashboard.css?v=1.0.0"/>
+            <!-- CSS Just for demo purpose, don't include it in your project -->
+            <add-attribute value="/admin/assets/demo/demo.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="javascripts">
+            <!--   Core JS Files   -->
+            <add-attribute value="/admin/assets/js/core/jquery.min.js" />
+            <add-attribute value="/admin/assets/js/core/popper.min.js" />
+            <add-attribute value="/admin/assets/js/core/bootstrap.min.js" />
+            <add-attribute value="/admin/assets/js/plugins/perfect-scrollbar.jquery.min.js" />
+            <!--  Google Maps Plugin    -->
+            <!-- Place this tag in your head or just before your close body tag. -->
+            <add-attribute value="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE" />
+            <!-- Chart JS -->
+            <add-attribute value="/admin/assets/js/plugins/chartjs.min.js" />
+            <!--  Notifications Plugin    -->
+            <add-attribute value="/admin/assets/js/plugins/bootstrap-notify.js" />
+            <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+            <add-attribute value="/admin/assets/js/black-dashboard.min.js?v=1.0.0" />
+            <!-- Black Dashboard DEMO methods, don't include it in your project! -->
+            <add-attribute value="/admin/assets/demo/demo.js" />
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/admin/dashboard" extends="adminBaseLayout">
+        <put-attribute name="title" value="dashboard"/>
+        <put-attribute name="titleHeader" value="Dashboard" />
+        <put-attribute name="body" value="/views/admin/views/dashboard.jsp" />
+        <put-list-attribute name="javascripts" inherit="true">
+            <!-- Current JS -->
+            <add-attribute value="/admin/assets/js/current/dashboard.js" />
+        </put-list-attribute>
+    </definition>
 </tiles-definitions>

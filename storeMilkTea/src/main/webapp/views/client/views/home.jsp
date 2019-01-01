@@ -50,8 +50,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/1.jpg" alt="" />
-														<img class="secondary-img" src="img/product/2.jpg" alt="" />
+														<img src="/client/assets/img/product/1.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/2.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -79,8 +79,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/3.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/3.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -108,8 +108,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/4.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/4.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -137,8 +137,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/5.jpg" alt="" />
-														<img class="secondary-img" src="img/product/6.jpg" alt="" />
+														<img src="/client/assets/img/product/5.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/6.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -166,8 +166,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/7.jpg" alt="" />
-														<img class="secondary-img" src="img/product/8.jpg" alt="" />
+														<img src="/client/assets/img/product/7.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/8.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -195,8 +195,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/9.jpg" alt="" />
-														<img class="secondary-img" src="img/product/10.jpg" alt="" />
+														<img src="/client/assets/img/product/9.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/10.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -224,8 +224,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/11.jpg" alt="" />
-														<img class="secondary-img" src="img/product/12.jpg" alt="" />
+														<img src="/client/assets/img/product/11.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/12.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -253,8 +253,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/23.jpg" alt="" />
-														<img class="secondary-img" src="img/product/22.jpg" alt="" />
+														<img src="/client/assets/img/product/23.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/22.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -282,8 +282,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/21.jpg" alt="" />
-														<img class="secondary-img" src="img/product/20.jpg" alt="" />
+														<img src="/client/assets/img/product/21.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/20.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -311,8 +311,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/19.jpg" alt="" />
-														<img class="secondary-img" src="img/product/18.jpg" alt="" />
+														<img src="/client/assets/img/product/19.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/18.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -340,8 +340,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/13.jpg" alt="" />
-														<img class="secondary-img" src="img/product/14.jpg" alt="" />
+														<img src="/client/assets/img/product/13.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/14.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -369,8 +369,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/14.jpg" alt="" />
-														<img class="secondary-img" src="img/product/15.jpg" alt="" />
+														<img src="/client/assets/img/product/14.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/15.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -398,8 +398,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/16.jpg" alt="" />
-														<img class="secondary-img" src="img/product/17.jpg" alt="" />
+														<img src="/client/assets/img/product/16.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/17.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -427,8 +427,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/18.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/18.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -456,8 +456,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/7.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/7.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 													<div class="product-action">
@@ -489,8 +489,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/2.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/2.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 												</div>
@@ -519,8 +519,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/3.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/3.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 												</div>
@@ -549,8 +549,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/4.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/4.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 												</div>
@@ -579,8 +579,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/5.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/5.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 												</div>
@@ -609,8 +609,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/6.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/6.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 												</div>
@@ -639,8 +639,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/7.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/7.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 												</div>
@@ -669,8 +669,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/8.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/8.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 												</div>
@@ -699,8 +699,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/9.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/9.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 												</div>
@@ -729,8 +729,8 @@
 											<div class="single-product">
 												<div class="product-img">
 													<a href="single-product.html">
-														<img src="img/product/10.jpg" alt="" />
-														<img class="secondary-img" src="img/product/11.jpg" alt="" />
+														<img src="/client/assets/img/product/10.jpg" alt="" />
+														<img class="secondary-img" src="/client/assets/img/product/11.jpg" alt="" />
 													</a>
 													<span class="tag-line">new</span>
 												</div>

@@ -4,12 +4,12 @@
 <spring:url value="/" var="urlHome" />
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
-<spring:url value="/assets/img/slider/s1.jpg" var="s1" />
+<spring:url value="/client/assets/img/slider/s1.jpg" var="s1" />
 <spring:url value="/login" var="UrlLogin" />
-<spring:url value="/assets/img/slider/s2.jpg" var="s2" />
-<spring:url value="/assets/img/slider/s3.jpg" var="s3" />
-<spring:url value="/assets/img/logo-white-text.png" var="logowhitetext" />
-<spring:url value="/assets/img/banner/banner-tratraicaytuoi.png"
+<spring:url value="/client/assets/img/slider/s2.jpg" var="s2" />
+<spring:url value="/client/assets/img/slider/s3.jpg" var="s3" />
+<spring:url value="/client/assets/img/logo-white-text.png" var="logowhitetext" />
+<spring:url value="/client/assets/img/banner/banner-tratraicaytuoi.png"
 	var="bannerTraiCay" />
 
 <header class="header-pos sticky-top">
@@ -123,7 +123,7 @@
 							<ul>
 								<li>
 									<div class="cart-img">
-										<a href="#"><img alt="" src="/assets/img/cart/1.png"></a>
+										<a href="#"><img alt="" src="/client/assets/img/cart/1.png"></a>
 									</div>
 									<div class="cart-info">
 										<h4>
@@ -137,7 +137,7 @@
 								</li>
 								<li>
 									<div class="cart-img">
-										<a href="#"><img alt="" src="/assets/img/cart/1.png"></a>
+										<a href="#"><img alt="" src="/client/assets/img/cart/1.png"></a>
 									</div>
 									<div class="cart-info">
 										<h4>

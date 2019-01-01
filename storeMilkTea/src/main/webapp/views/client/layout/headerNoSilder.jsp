@@ -6,7 +6,7 @@
 						<div class="row">
 							<div class="col-md-2 col-sm-4 col-xs-5">
 								<div class="logo">
-									<a href="index.html"><img src="/assets/img/logo-white-text.png" alt="" /></a>
+									<a href="index.html"><img src="/client/assets/img/logo-white-text.png" alt="" /></a>
 								</div>
 							</div>
 							<div class="col-md-8 hidden-xs hidden-sm">
@@ -133,11 +133,11 @@
 									<ul>
 										<li>
 											<div class="cart-img">
-												<a href="#"><img alt="" src="/assets/img/cart/1.jpg"></a>
+												<a href="#"><img alt="" src="/client/assets/img/cart/1.jpg"></a>
 											</div>
 											<div class="cart-info">
 												<h4><a href="#">Vestibulum suscipit</a></h4>
-												<span>£165.00 <span>x 1</span></span>
+												<span>ï¿½165.00 <span>x 1</span></span>
 											</div>
 											<div class="del-icon">
 												<i class="fa fa-times-circle"></i>
@@ -145,11 +145,11 @@
 										</li>
 										<li>
 											<div class="cart-img">
-												<a href="#"><img alt="" src="/assets/img/cart/1.jpg"></a>
+												<a href="#"><img alt="" src="/client/assets/img/cart/1.jpg"></a>
 											</div>
 											<div class="cart-info">
 												<h4><a href="#">Vestibulum suscipit</a></h4>
-												<span>£165.00 <span>x 1</span></span>
+												<span>ï¿½165.00 <span>x 1</span></span>
 											</div>
 											<div class="del-icon">
 												<i class="fa fa-times-circle"></i>
@@ -157,7 +157,7 @@
 										</li>
 										<li class="cart-border">
 											<div class="subtotal-text">Subtotal: </div>
-											<div class="subtotal-price">£300.00</div>
+											<div class="subtotal-price">ï¿½300.00</div>
 										</li>
 										<li>
 											<a class="cart-button" href="checkout.html">view cart</a>
