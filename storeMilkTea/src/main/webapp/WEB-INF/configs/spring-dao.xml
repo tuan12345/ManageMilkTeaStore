@@ -9,4 +9,10 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+
+	<bean id="roleDAO" class="app.dao.impl.RoleDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
 </beans>

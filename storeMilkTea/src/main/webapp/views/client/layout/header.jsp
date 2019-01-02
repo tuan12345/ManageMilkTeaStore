@@ -168,11 +168,9 @@
 						<div class="user-meta">
 							<a href="#"><i class="fa fa-cog"></i></a>
 							<ul>
-								<li><a href="#">My Account</a></li>
 								<li><a href="#">Wish list</a></li>
 								<li><a href="#">Checkout</a></li>
-								<li><a href="#">Testimonial</a></li>
-								<li><a href="#">Log in</a></li>
+								<li><a href="#"  data-toggle="modal" data-target="#myModal">Log in</a></li>
 							</ul>
 						</div>
 						<div class="header-search">

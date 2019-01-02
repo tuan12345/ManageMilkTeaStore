@@ -18,7 +18,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "role", uniqueConstraints = { @UniqueConstraint(columnNames = { "id" }) })
 public class Role {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", length = 11, nullable = false, unique = true)
 	private int role_Id;
 	@Column(name = "name", length = 45, nullable = true)
@@ -26,6 +26,14 @@ public class Role {
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "user", joinColumns = { @JoinColumn(name = "id") })
 	private List<User> users;
+
+	public Role(int role_Id, String name) {
+		this.role_Id = role_Id;
+		this.name = name;
+	}
+
+	public Role() {
+	}
 
 	public List<User> getUsers() {
 		return users;

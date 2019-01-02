@@ -20,7 +20,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "user", uniqueConstraints = { @UniqueConstraint(columnNames = { "id" }) })
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", length = 11, nullable = false, unique = true)
 	private int user_id;
 	@Column(name = "username", length = 45, nullable = false, unique = true)
@@ -94,4 +94,15 @@ public class User {
 		this.userName = userName;
 	}
 
+	public User(int id ,String userName, String email, String password, String fullName, Role role) {
+		this.user_id = id;
+		this.userName = userName;
+		Email = email;
+		Password = password;
+		this.fullName = fullName;
+		this.role = role;
+	}
+
+	public User() {
+	}
 }

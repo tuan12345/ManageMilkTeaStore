@@ -240,7 +240,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'anhtuan@gmail.com','$2a$10$toO29ZvvON7m5P5AnTQ36u0q1MqkjMflwa4tIu20o9K6HFmEj78e2','anhtuan',1,'anhtuan'),(2,NULL,'123','anhtuan',1,NULL),(3,NULL,'123',NULL,2,NULL),(4,NULL,'12',NULL,1,NULL);
+INSERT INTO `user` VALUES (1,'anhtuan@gmail.com','$2a$10$toO29ZvvON7m5P5AnTQ36u0q1MqkjMflwa4tIu20o9K6HFmEj78e2','anhtuan',1,'anhtuan');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
