@@ -2,8 +2,8 @@ package app.util;
 
 import java.util.function.Function;
 
-import app.dto.RoleInfo;
-import app.dto.UserInfo;
+import app.bean.RoleInfo;
+import app.bean.UserInfo;
 import app.model.Role;
 import app.model.User;
 

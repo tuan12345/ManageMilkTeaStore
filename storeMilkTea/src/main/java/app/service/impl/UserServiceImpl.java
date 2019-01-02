@@ -2,8 +2,7 @@ package app.service.impl;
 
 import java.io.Serializable;
 
-import app.dao.UserDAO;
-import app.dto.UserInfo;
+import app.bean.UserInfo;
 import app.service.UserService;
 import app.util.ConvertModelToDto;
 

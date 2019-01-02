@@ -1,4 +1,4 @@
-package app.dto;
+package app.bean;
 
 public class RoleInfo {
 	private int id;

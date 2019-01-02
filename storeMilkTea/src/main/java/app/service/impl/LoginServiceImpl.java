@@ -10,7 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import app.dto.CustomUserDetails;
+import app.bean.CustomUserDetails;
 import app.model.User;
 import app.service.LoginService;
 

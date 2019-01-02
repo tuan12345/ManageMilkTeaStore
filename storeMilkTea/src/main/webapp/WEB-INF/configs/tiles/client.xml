@@ -7,40 +7,65 @@
 	<definition name="baseLayout" template="/views/client/layout/baseLayout.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="header" value="/views/client/layout/header.jsp" />
+		<put-attribute name="slider" value="" />
+		<put-attribute name="breadcrumb" value="/views/client/layout/breadcrumb.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/views/client/layout/footer.jsp" />
+		<put-list-attribute name="stylesheets">
+			<!--     Fonts and icons     -->
+			<add-attribute value="https://fonts.googleapis.com/css?family=Lato:400,300,700,900"/>
+			<add-attribute value="https://fonts.googleapis.com/css?family=Raleway:400,500,700,300,800"/>
+			<add-attribute value="https://use.fontawesome.com/releases/v5.0.6/css/all.css"/>
+			<!-- all css here -->
+			<!-- bootstrap v3.3.6 css -->
+			<add-attribute value="/client/assets/css/bootstrap.min.css"/>
+			<!-- animate css -->
+			<add-attribute value="/client/assets/css/animate.css"/>
+			<!-- jquery-ui.min css -->
+			<add-attribute value="/client/assets/css/jquery-ui.min.css"/>
+			<!-- meanmenu css -->
+			<add-attribute value="/client/assets/css/meanmenu.min.css"/>
+			<!-- owl.carousel css -->
+			<add-attribute value="/client/assets/css/owl.carousel.css"/>
+			<!-- nivo-slider css -->
+			<add-attribute value="/client/assets/lib/css/nivo-slider.css"/>
+			<!-- style css -->
+			<add-attribute value="/client/assets/style.css"/>
+			<!-- responsive css -->
+			<add-attribute value="/client/assets/css/responsive.css"/>
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<!-- modernizr js -->
+			<add-attribute value="/client/assets/js/vendor/modernizr-2.8.3.min.js" />
+			<!-- all js here -->
+			<!-- jquery latest version -->
+			<add-attribute value="/client/assets/js/vendor/jquery-1.12.0.min.js"/>
+			<!-- bootstrap js -->
+			<add-attribute value="/client/assets/js/bootstrap.min.js"/>
+			<!-- owl.carousel js -->
+			<add-attribute value="/client/assets/js/owl.carousel.min.js"/>
+			<!-- meanmenu js -->
+			<add-attribute value="/client/assets/js/jquery.meanmenu.js"/>
+			<!-- jquery-ui js -->
+			<add-attribute value="/client/assets/js/jquery-ui.min.js"/>
+			<!-- nivo.slider js -->
+			<add-attribute value="/client/assets/lib/js/jquery.nivo.slider.pack.js"/>
+			<add-attribute value="/client/assets/lib/js/nivo-active.js"/>
+			<!-- wow js -->
+			<add-attribute value="/client/assets/js/wow.min.js"/>
+			<!-- plugins js -->
+			<add-attribute value="/client/assets/js/plugins.js"/>
+			<!-- main js -->
+			<add-attribute value="/client/assets/js/main.js"/>
+		</put-list-attribute>
 	</definition>
 
-	<!-- BaseLeft Definition -->
-
-	<definition name="baseLayoutLeft" template="/views/client/layout/BaseLayoutLeft.jsp">
-		<put-attribute name="title" value="" />
-		<put-attribute name="header" value="/views/client/layout/header.jsp" />
-		<put-attribute name="left" value="/views/client/layout/left.jsp" />
-		<put-attribute name="body" value="" />
-		<put-attribute name="footer" value="/views/client/layout/footer.jsp" />
-	</definition>
-	
-	<!-- BaseNoSlider Definition -->
-
-	<definition name="baseLayoutNoSilder" template="/views/client/layout/BaselayoutNoSlider.jsp">
-		<put-attribute name="title" value="" />
-		<put-attribute name="header" value="/views/client/layout/headerNoSilder.jsp" />
-		<put-attribute name="body" value="" />
-		<put-attribute name="footer" value="/views/client/layout/footer.jsp" />
-	</definition>
-
-	<!-- home -->
-	<definition name="home" extends="baseLayoutLeft">
+	<!-- Home -->
+	<definition name="home" extends="baseLayout">
 		<put-attribute name="title" value="HOME" />
+		<put-attribute name="slider" value="/views/client/layout/slider.jsp" />
+		<put-attribute name="breadcrumb" value="" />
 		<put-attribute name="body" value="/views/client/views/home.jsp" />
 	</definition>
 	
-	<!--login  -->
-		<definition name="login" extends="baseLayoutNoSilder">
-		<put-attribute name="title" value="Login" />
-		<put-attribute name="body" value="/views/client/views/login.jsp" />
-	</definition>
-
-
 </tiles-definitions>
