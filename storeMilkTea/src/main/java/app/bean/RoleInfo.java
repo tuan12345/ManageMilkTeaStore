@@ -1,6 +1,8 @@
 package app.bean;
 
-public class RoleInfo {
+import java.io.Serializable;
+
+public class RoleInfo implements Serializable {
 	private int id;
 	private String name;
 	public int getId() {
