@@ -4,9 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="UserDAO" class="app.dao.impl.UserDAOImpl">
+	<bean id="userDAO" class="app.dao.impl.UserDAOImpl">
 		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
+			<ref bean="sessionFactory"/>
 		</property>
 	</bean>
 

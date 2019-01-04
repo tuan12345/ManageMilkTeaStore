@@ -20,7 +20,7 @@ public class UserController extends BaseController {
         HttpStatus httpStatus = null;
         try {
             if (userService.checkLogin(userInfo)) {
-                result = jwtService.generateTokenLogin(userInfo.getUserName());
+                result = jwtService.generateTokenLogin(userInfo.getEmail());
                 httpStatus = HttpStatus.OK;
             } else {
                 result = "Wrong userId and password";

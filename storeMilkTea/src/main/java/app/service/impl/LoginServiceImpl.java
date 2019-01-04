@@ -18,7 +18,7 @@ public class LoginServiceImpl extends BaseServiceImpl implements LoginService {
 
     private CustomUserDetails setUserDetail(User user) {
         CustomUserDetails userDetail = new CustomUserDetails();
-        userDetail.setId(user.getUser_id());
+        userDetail.setId(user.getId());
         userDetail.setEmail(user.getEmail());
         userDetail.setPassword(user.getPassword());
         return userDetail;
@@ -27,7 +27,7 @@ public class LoginServiceImpl extends BaseServiceImpl implements LoginService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
-            User user = userDAO.loadUserByUserName(username);
+            User user = userDAO.loadUserByEmail(username);
             CustomUserDetails userDetail = setUserDetail(user);
             userDetail.setUsername(username);
             List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();

@@ -1,62 +1,33 @@
 package app.model;
 
+import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "role", uniqueConstraints = { @UniqueConstraint(columnNames = { "id" }) })
-public class Role {
+@Table(name = "roles")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+public class Role implements Serializable {
+
+	@NonNull
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", length = 11, nullable = false, unique = true)
-	private int role_Id;
-	@Column(name = "name", length = 45, nullable = true)
+	private Integer id;
+
+	@NonNull
 	private String name;
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "user", joinColumns = { @JoinColumn(name = "id") })
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "role")
+	@Fetch(FetchMode.SELECT)
+	@OrderColumn
 	private List<User> users;
-
-	public Role(int role_Id, String name) {
-		this.role_Id = role_Id;
-		this.name = name;
-	}
-
-	public Role() {
-	}
-
-	public List<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-
-	public int getRole_Id() {
-		return role_Id;
-	}
-
-	public void setRole_Id(int role_Id) {
-		this.role_Id = role_Id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 }

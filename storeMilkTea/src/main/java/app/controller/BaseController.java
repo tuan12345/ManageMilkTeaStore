@@ -15,13 +15,4 @@ public class BaseController {
 	protected JWTService jwtService;
 	@Autowired
 	protected ReloadableResourceBundleMessageSource messageSource;
-	
-	protected UserInfo currentUser() {
-		try {
-			return userService.findUserInfoByUsername(SecurityContextHolder.getContext().getAuthentication().getName());
-		} catch (Exception e) {
-			return null;
-		}
-	}
-
 }
