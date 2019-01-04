@@ -1,108 +1,53 @@
 package app.model;
 
+import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "user", uniqueConstraints = { @UniqueConstraint(columnNames = { "id" }) })
-public class User {
+@Table(name = "users")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+public class User implements Serializable {
+
+	@NonNull
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", length = 11, nullable = false, unique = true)
-	private int user_id;
-	@Column(name = "username", length = 45, nullable = false, unique = true)
-	private String userName;
-	@Column(name = "email", length = 45, nullable = false)
-	private String Email;
-	@Column(name = "password", length = 45, nullable = false)
-	private String Password;
-	@Column(name = "full_name", length = 45, nullable = true)
+	private Integer id;
+
+	@NonNull
+	private String email;
+
+	@NonNull
+	private String password;
+
+	@NonNull
 	private String fullName;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "role_id", nullable = false)
+
+	@NonNull
+	private String phone;
+
+	@NonNull
+	private Boolean gender;
+
+	@NonNull
+	@ManyToOne
+	@JoinColumn(name = "roleID", nullable = false)
 	private Role role;
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "review", joinColumns = { @JoinColumn(name = "id") })
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	@Fetch(FetchMode.SELECT)
+	@OrderColumn
 	private List<Review> reviews;
 
-	public List<Review> getReviews() {
-		return reviews;
-	}
-
-	public void setReviews(List<Review> reviews) {
-		this.reviews = reviews;
-	}
-
-	public int getUser_id() {
-		return user_id;
-	}
-
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
-	}
-
-	public String getEmail() {
-		return Email;
-	}
-
-	public void setEmail(String email) {
-		Email = email;
-	}
-
-	public String getPassword() {
-		return Password;
-	}
-
-	public void setPassword(String password) {
-		Password = password;
-	}
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public User(int id ,String userName, String email, String password, String fullName, Role role) {
-		this.user_id = id;
-		this.userName = userName;
-		Email = email;
-		Password = password;
-		this.fullName = fullName;
-		this.role = role;
-	}
-
-	public User() {
-	}
+	@OneToOne(mappedBy = "user")
+	private Cart cart;
 }

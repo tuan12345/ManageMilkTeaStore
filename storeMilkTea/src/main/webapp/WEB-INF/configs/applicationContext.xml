@@ -41,8 +41,9 @@
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
 		<property name="defaultLocale" value="en" />
 	</bean>
+    <bean id="sessionFactory"/>
 
-	<mvc:interceptors>
+    <mvc:interceptors>
 		<bean parent="localeChangeInterceptor" />
 	</mvc:interceptors>
 

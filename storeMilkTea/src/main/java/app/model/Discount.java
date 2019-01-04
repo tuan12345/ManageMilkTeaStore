@@ -1,74 +1,43 @@
 package app.model;
 
+import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table
-public class Discount {
+@Table(name = "discounts")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+public class Discount implements Serializable {
+
+	@NonNull
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", length = 11, nullable = false, unique = true)
-	private int id;
-	@Column(name = "percent", nullable = false)
-	private float percent;
-	@Column(name = "start_date", nullable = true)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+
+	@NonNull
+	private BigDecimal percent;
+
+	@NonNull
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date startDate;
-	@Column(name = "end_date", nullable = true)
+
+	@NonNull
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date endDate;
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "product", joinColumns = { @JoinColumn(name = "id") })
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "discount")
+	@Fetch(FetchMode.SELECT)
+	@OrderColumn
 	private List<Product> products;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public float getPercent() {
-		return percent;
-	}
-
-	public void setPercent(float percent) {
-		this.percent = percent;
-	}
-
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	public List<Product> getProducts() {
-		return products;
-	}
-
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
-
 }

@@ -15,13 +15,15 @@ public class ConvertPasswordUtils {
     private RoleService roleService;
 
 
-    public User convertNewUser(UserInfo userInfo){
+    public User convertNewUser(UserInfo userInfo) {
         User newUser = new User();
         newUser.setEmail(userInfo.getEmail());
         newUser.setPassword(encoder.encode(userInfo.getPassword()));
-        newUser.setFullName(userInfo.getName());
-        newUser.setUserName(userInfo.getUserName());
+        newUser.setFullName(userInfo.getFullName());
+        newUser.setPhone(userInfo.getPhone());
+        newUser.setGender(userInfo.isGender());
         newUser.setRole(roleService.findByName("ROLE_USER"));
+
         return newUser;
 
     }

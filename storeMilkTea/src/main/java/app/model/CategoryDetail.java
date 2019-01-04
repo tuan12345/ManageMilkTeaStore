@@ -9,25 +9,26 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "categoryDetails")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
-public class Category implements Serializable {
+public class CategoryDetail implements Serializable {
 
-    @NonNull
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NonNull
     private String name;
 
-    @OneToMany(mappedBy = "category")
+    @ManyToOne
+    @JoinColumn(name = "categoryID")
+    private Category category;
+
     @Fetch(FetchMode.SELECT)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoryDetail")
     @OrderColumn
-    private List<CategoryDetail> categoryDetails;
+    private List<Product> products;
 
 }

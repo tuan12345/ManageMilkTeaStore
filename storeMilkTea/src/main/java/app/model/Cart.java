@@ -9,13 +9,13 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "carts")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class Category implements Serializable {
+public class Cart implements Serializable {
 
     @NonNull
     @Id
@@ -23,11 +23,14 @@ public class Category implements Serializable {
     private Integer id;
 
     @NonNull
-    private String name;
+    @OneToOne
+    @JoinColumn(name = "userID")
+    private User user;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
     @Fetch(FetchMode.SELECT)
     @OrderColumn
-    private List<CategoryDetail> categoryDetails;
+    private List<CartDetail> cartDetailID;
+
 
 }

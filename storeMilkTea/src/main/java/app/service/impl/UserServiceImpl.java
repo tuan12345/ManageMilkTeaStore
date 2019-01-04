@@ -30,17 +30,6 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
         return false;
     }
 
-    @Override
-    public UserInfo findUserInfoByUsername(String userName) {
-        try {
-
-            return ConvertModelToBean.mapUserToUserInfo(userDAO.loadUserByUserName(userName));
-        } catch (Exception e) {
-
-            return null;
-        }
-
-    }
 
     @Override
     public boolean checkLogin(UserInfo userInfo) {
@@ -58,7 +47,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
     public boolean createUser(UserInfo userInfo) {
         try {
             if (UserUtils.checkUserInfo(userInfo)) {
-                if (userDAO.loadUserByUserNameAndEmail(userInfo.getUserName(), userInfo.getEmail()) == null) {
+                if (userDAO.loadUserByEmail(userInfo.getEmail()) == null) {
                     User user = convertPasswordUtils.convertNewUser(userInfo);
                     return userDAO.saveOrUpdate(user) != null;
                 }else return false;
