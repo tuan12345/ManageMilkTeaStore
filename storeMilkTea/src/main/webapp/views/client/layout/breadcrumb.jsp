@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb-list">
-                    <h1><tiles:insertAttribute name="title"/></h1>
+                    <h1><tiles:insertAttribute name="title" ignore="true"/></h1>
                 </div>
             </div>
         </div>

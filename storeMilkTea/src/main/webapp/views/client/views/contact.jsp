@@ -81,3 +81,4 @@
     </div>
 </div>
 <!-- contact-area end -->
+</script>

@@ -35,8 +35,6 @@
 			<add-attribute value="/client/assets/css/responsive.css"/>
 		</put-list-attribute>
 		<put-list-attribute name="javascripts">
-			<!-- modernizr js -->
-			<add-attribute value="/client/assets/js/vendor/modernizr-2.8.3.min.js" />
 			<!-- all js here -->
 			<!-- jquery latest version -->
 			<add-attribute value="/client/assets/js/vendor/jquery-1.12.0.min.js"/>
@@ -66,6 +64,21 @@
 		<put-attribute name="slider" value="/views/client/layout/slider.jsp" />
 		<put-attribute name="breadcrumb" value="" />
 		<put-attribute name="body" value="/views/client/views/home.jsp" />
+		<put-list-attribute name="javascripts" inherit="true">
+			<!-- modernizr js -->
+			<add-attribute value="/client/assets/js/vendor/modernizr-2.8.3.min.js" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Contact -->
+	<definition name="/contact" extends="baseLayout">
+		<put-attribute name="title" value="Contact"/>
+		<put-attribute name="body" value="/views/client/views/contact.jsp" />
+		<put-list-attribute name="javascripts" inherit="true">
+			<!-- Google Map js -->
+			<add-attribute value="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYKTlxU91APw7XNBzoYAsfStOihO-0bqM"/>
+			<add-attribute value="/client/assets/js/current/contact.js"/>
+		</put-list-attribute>
 	</definition>
 	
 </tiles-definitions>
