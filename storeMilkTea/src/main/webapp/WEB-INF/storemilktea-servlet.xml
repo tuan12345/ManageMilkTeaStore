@@ -21,6 +21,7 @@
 			<list>
 				<value>/WEB-INF/configs/tiles/client.xml</value>
 				<value>/WEB-INF/configs/tiles/admin.xml</value>
+				<value>/WEB-INF/configs/tiles/error.xml</value>
 			</list>
 		</property>
 	</bean>

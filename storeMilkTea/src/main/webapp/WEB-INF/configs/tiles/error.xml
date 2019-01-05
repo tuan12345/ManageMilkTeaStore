@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="errorBaseLayout" template="/views/error/layout/baseLayout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="context" value="" />
+        <put-list-attribute name="stylesheets">
+            <add-attribute value="https://fonts.googleapis.com/css?family=Montserrat:200,400,700"/>
+            <add-attribute value="/error/assets/css/style.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="javascripts">
+            <add-attribute value="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js" />
+            <add-attribute value="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/error/pages/404" extends="errorBaseLayout">
+        <put-attribute name="title" value="404" />
+        <put-attribute name="context" value="/views/error/views/404.jsp" />
+    </definition>
+
+    <definition name="/error/pages/500" extends="errorBaseLayout">
+        <put-attribute name="title" value="500" />
+        <put-attribute name="context" value="/views/error/views/500.jsp" />
+    </definition>
+
+    <definition name="/error/pages/undefined" extends="errorBaseLayout">
+        <put-attribute name="title" value="undefined" />
+        <put-attribute name="context" value="/views/error/views/undefined.jsp" />
+    </definition>
+</tiles-definitions>

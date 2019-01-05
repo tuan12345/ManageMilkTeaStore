@@ -4,8 +4,6 @@ import app.bean.UserInfo;
 import app.model.User;
 import app.service.UserService;
 import app.util.ConvertBeanToModel;
-import app.util.ConvertModelToBean;
-import app.util.ConvertPasswordUtils;
 import app.util.UserUtils;
 
 import java.io.Serializable;
@@ -48,7 +46,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
         try {
             if (UserUtils.checkUserInfo(userInfo)) {
                 if (userDAO.loadUserByEmail(userInfo.getEmail()) == null) {
-                    User user = convertPasswordUtils.convertNewUser(userInfo);
+                    User user = convertNewUserUtils.convertNewUser(userInfo);
                     return userDAO.saveOrUpdate(user) != null;
                 }else return false;
 

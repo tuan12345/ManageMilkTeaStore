@@ -8,7 +8,7 @@
 		<property name="target">
 			<bean class="app.service.impl.UserServiceImpl">
 				<property name="userDAO" ref="userDAO" />
-				<property name="convertPasswordUtils" ref="convertPasswordUtils"/>
+				<property name="convertNewUserUtils" ref="convertPasswordUtils"/>
 			</bean>
 		</property>
 		
