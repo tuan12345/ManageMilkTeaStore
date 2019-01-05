@@ -6,7 +6,7 @@ import app.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-public class ConvertPasswordUtils {
+public class ConvertNewUserUtils {
 
     @Autowired
     private BCryptPasswordEncoder encoder;
@@ -20,9 +20,7 @@ public class ConvertPasswordUtils {
         newUser.setEmail(userInfo.getEmail());
         newUser.setPassword(encoder.encode(userInfo.getPassword()));
         newUser.setFullName(userInfo.getFullName());
-        newUser.setPhone(userInfo.getPhone());
-        newUser.setGender(userInfo.isGender());
-        newUser.setRole(roleService.findByName("ROLE_USER"));
+        newUser.setRole(roleService.findByName("ROLE_CUSTOMER"));
 
         return newUser;
 

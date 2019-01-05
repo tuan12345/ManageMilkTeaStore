@@ -18,7 +18,7 @@
     <beans:bean id="customAccessDeniedHandler"
                 class="app.jwt.CustomAccessDeniedHandler" />
 
-    <beans:bean id="convertPasswordUtils" class="app.util.ConvertPasswordUtils"/>
+    <beans:bean id="convertPasswordUtils" class="app.util.ConvertNewUserUtils"/>
 
     <beans:bean id="jwtAuthenticationFilter" class="app.jwt.JwtAuthenticationTokenFilter">
         <beans:property name="authenticationManager" ref="authenticationManager" />

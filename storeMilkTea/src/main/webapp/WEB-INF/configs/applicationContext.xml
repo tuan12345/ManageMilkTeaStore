@@ -10,6 +10,7 @@
 
 	<mvc:resources mapping="/client/assets/**" location="views/client/assets/" />
 	<mvc:resources mapping="/admin/assets/**" location="views/admin/assets/" />
+	<mvc:resources mapping="/error/assets/**" location="views/error/assets/" />
 
 	<!-- Load all annotation from java class -->
 	<context:annotation-config />

@@ -8,6 +8,8 @@ import app.model.User;
 import java.util.function.Function;
 
 public class ConvertBeanToModel {
+
+
     public static Role mapRoleInfoToRole(RoleInfo roleInfo) {
         Function<RoleInfo, Role> map = r -> new Role(r.getId(), r.getName());
 
@@ -21,7 +23,7 @@ public class ConvertBeanToModel {
                 u.getPassword(),
                 u.getFullName(),
                 u.getPhone(),
-                u.isGender(),
+                u.getGender(),
                 mapRoleInfoToRole(u.getRole()));
 
         return map.apply(userInfo);

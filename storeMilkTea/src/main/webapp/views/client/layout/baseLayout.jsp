@@ -234,10 +234,5 @@
     </div>
 </div>
 <!-- Start login and register -->
-<!-- scripts -->
-<c:forEach var="script" items="${javascripts}">
-    <script src="<c:url value="${script}"/>"></script>
-</c:forEach>
-<!-- end scripts -->
 </body>
 </html>

@@ -2,15 +2,15 @@ package app.service.impl;
 
 import app.dao.RoleDAO;
 import app.dao.UserDAO;
-import app.util.ConvertPasswordUtils;
+import app.util.ConvertNewUserUtils;
 
 public class BaseServiceImpl {
 	protected UserDAO userDAO;
 	protected RoleDAO roleDAO;
-	protected ConvertPasswordUtils convertPasswordUtils;
+	protected ConvertNewUserUtils convertNewUserUtils;
 
-	public void setConvertPasswordUtils(ConvertPasswordUtils convertPasswordUtils) {
-		this.convertPasswordUtils = convertPasswordUtils;
+	public void setConvertNewUserUtils(ConvertNewUserUtils convertNewUserUtils) {
+		this.convertNewUserUtils = convertNewUserUtils;
 	}
 
 	public void setRoleDAO(RoleDAO roleDAO) {
