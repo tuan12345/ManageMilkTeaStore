@@ -250,6 +250,7 @@ CREATE TABLE `users`
   `email`    VARCHAR(254)     NOT NULL,
   `password` VARCHAR(120)     NOT NULL,
   `roleID`   INT(11) UNSIGNED NOT NULL,
+  `enable`   BOOLEAN          NOT NULL DEFAULT FALSE,
 
   PRIMARY KEY (`id`),
 

@@ -1,4 +1,4 @@
-package app.jwt;
+package app.event;
 
 import app.dao.UserDAO;
 import app.service.JWTService;

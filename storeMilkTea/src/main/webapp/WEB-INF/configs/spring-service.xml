@@ -9,9 +9,9 @@
 			<bean class="app.service.impl.UserServiceImpl">
 				<property name="userDAO" ref="userDAO" />
 				<property name="convertNewUserUtils" ref="convertPasswordUtils"/>
+				<property name="verificationTokenDAO" ref="verificationTokenDAO"/>
 			</bean>
 		</property>
-		
 	</bean>
 
 	<bean id="jwtService" class="app.service.impl.JWTServiceImpl"/>

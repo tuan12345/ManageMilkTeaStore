@@ -2,6 +2,7 @@ package app.service.impl;
 
 import app.bean.UserInfo;
 import app.model.User;
+import app.model.VerificationToken;
 import app.service.UserService;
 import app.util.ConvertBeanToModel;
 import app.util.UserUtils;
@@ -42,19 +43,69 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
     }
 
     @Override
-    public boolean createUser(UserInfo userInfo) {
+    public User createNewUserAccount(UserInfo userInfo) {
+
         try {
-            if (UserUtils.checkUserInfo(userInfo)) {
-                if (userDAO.loadUserByEmail(userInfo.getEmail()) == null) {
-                    User user = convertNewUserUtils.convertNewUser(userInfo);
-                    return userDAO.saveOrUpdate(user) != null;
-                }else return false;
 
-            } else return false;
+            if (UserUtils.checkFormatUser(userInfo)) {
+
+                if (emailExist(userInfo.getEmail())) {
+                    return userDAO.saveOrUpdate(convertNewUserUtils.convertNewUser(userInfo));
+                } else return null;
+
+            } else return null;
+
         } catch (Exception e) {
-
-            return false;
+            throw e;
         }
+    }
+
+    @Override
+    public User getUserByToken(String verificationToken) {
+        try {
+            return verificationTokenDAO.findByToken(verificationToken).getUser();
+
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    @Override
+    public VerificationToken createVerificationToken(UserInfo userInfo, String token) {
+        try {
+            VerificationToken myToken = new VerificationToken(token, convertNewUserUtils.convertNewUser(userInfo));
+            return verificationTokenDAO.saveOrUpdate(myToken);
+
+        } catch (Exception e) {
+            throw e;
+        }
+
+    }
+
+    @Override
+    public VerificationToken getVerificationToken(String verificationToken) {
+        try {
+            return verificationTokenDAO.findByToken(verificationToken);
+
+        } catch (Exception e) {
+            return null;
+
+        }
+    }
+
+    @Override
+    public User saveRegisteredUser(User user) {
+        try {
+            return userDAO.saveOrUpdate(user);
+
+        }catch (Exception e){
+            throw  e;
+        }
+    }
+
+    private boolean emailExist(String email) {
+        return userDAO.loadUserByEmail(email) == null;
+
     }
 
 }

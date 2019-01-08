@@ -37,7 +37,7 @@
 		<put-list-attribute name="javascripts">
 			<!-- all js here -->
 			<!-- jquery latest version -->
-			<add-attribute value="/client/assets/js/vendor/jquery-1.12.0.min.js"/>
+			<add-attribute value="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.1.min.js"/>
 			<!-- bootstrap js -->
 			<add-attribute value="/client/assets/js/bootstrap.min.js"/>
 			<!-- owl.carousel js -->
@@ -59,7 +59,7 @@
 	</definition>
 
 	<!-- Home -->
-	<definition name="home" extends="baseLayout">
+	<definition name="/home" extends="baseLayout">
 		<put-attribute name="title" value="HOME" />
 		<put-attribute name="slider" value="/views/client/layout/slider.jsp" />
 		<put-attribute name="breadcrumb" value="" />
@@ -80,5 +80,8 @@
 			<add-attribute value="/client/assets/js/current/contact.js"/>
 		</put-list-attribute>
 	</definition>
+
+	<!-- Conform -->
+	<definition name="/confirm" template="/views/client/views/confirm.jsp"/>
 	
 </tiles-definitions>

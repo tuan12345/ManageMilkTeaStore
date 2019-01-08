@@ -4,14 +4,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
-import java.util.Objects;
+
 
 @Entity
 @Table
 @Data
 @NoArgsConstructor
-public class Delivery {
+
+public class Delivery implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

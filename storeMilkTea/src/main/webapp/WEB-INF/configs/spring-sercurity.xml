@@ -14,13 +14,13 @@
 
 
     <beans:bean id="servicesEntryPoint"
-                class="app.jwt.AuthenticationEntryPoint" />
+                class="app.listener.AuthenticationEntryPoint" />
     <beans:bean id="customAccessDeniedHandler"
-                class="app.jwt.CustomAccessDeniedHandler" />
+                class="app.event.CustomAccessDeniedHandler" />
 
     <beans:bean id="convertPasswordUtils" class="app.util.ConvertNewUserUtils"/>
 
-    <beans:bean id="jwtAuthenticationFilter" class="app.jwt.JwtAuthenticationTokenFilter">
+    <beans:bean id="jwtAuthenticationFilter" class="app.event.JwtAuthenticationTokenFilter">
         <beans:property name="authenticationManager" ref="authenticationManager" />
     </beans:bean>
     <http pattern="/user/login" security="none"/>
