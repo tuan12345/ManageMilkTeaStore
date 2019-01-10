@@ -4,23 +4,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "carts")
+@Table(name = "profile")
 @Data
 @NoArgsConstructor
-public class Cart {
+public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @OneToOne(cascade = CascadeType.ALL)
+    private String fullName;
+    private String phone;
+    private String century;
+    private String city;
+    private String district;
+    private String ward;
+    private String address;
+    @OneToOne
     @JoinColumn(name = "userID")
     private User user;
-
-    @OneToMany(mappedBy = "cart")
-    private List<CartDetail> cartDetails;
-
 }

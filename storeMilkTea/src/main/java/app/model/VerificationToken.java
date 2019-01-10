@@ -4,23 +4,26 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "carts")
+@Table(name = "verificationToken")
 @Data
 @NoArgsConstructor
-public class Cart {
+public class VerificationToken {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    private String token;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Timestamp expiryDate;
+
+    @OneToOne
     @JoinColumn(name = "userID")
     private User user;
-
-    @OneToMany(mappedBy = "cart")
-    private List<CartDetail> cartDetails;
 
 }
