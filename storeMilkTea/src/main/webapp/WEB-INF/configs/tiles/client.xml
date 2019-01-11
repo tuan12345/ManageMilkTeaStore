@@ -37,9 +37,10 @@
 		<put-list-attribute name="javascripts">
 			<!-- all js here -->
 			<!-- jquery latest version -->
-			<add-attribute value="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.1.min.js"/>
+			<add-attribute value="/client/assets/js/vendor/jquery-1.12.0.min.js"/>
 			<!-- bootstrap js -->
 			<add-attribute value="/client/assets/js/bootstrap.min.js"/>
+			<add-attribute value="/client/assets/js/bootstrap-notify.js"/>
 			<!-- owl.carousel js -->
 			<add-attribute value="/client/assets/js/owl.carousel.min.js"/>
 			<!-- meanmenu js -->
@@ -82,6 +83,36 @@
 	</definition>
 
 	<!-- Conform -->
-	<definition name="/confirm" template="/views/client/views/confirm.jsp"/>
+	<definition name="/confirm" template="/views/client/views/confirm.jsp">
+		<put-list-attribute name="stylesheets">
+			<!-- bootstrap v3.3.6 css -->
+			<add-attribute value="/client/assets/css/bootstrap.min.css"/>
+			<!-- animate css -->
+			<add-attribute value="/client/assets/css/animate.css"/>
+			<!-- jquery-ui.min css -->
+			<add-attribute value="/client/assets/css/jquery-ui.min.css"/>
+			<add-attribute value="/client/assets/style.css"/>
+			<!-- responsive css -->
+			<add-attribute value="/client/assets/css/responsive.css"/>
+		</put-list-attribute>
+		<put-list-attribute name="javascripts">
+			<!-- all js here -->
+			<!-- jquery latest version -->
+			<add-attribute value="/client/assets/js/vendor/jquery-1.12.0.min.js"/>
+			<!-- bootstrap js -->
+			<add-attribute value="/client/assets/js/bootstrap.min.js"/>
+			<add-attribute value="/client/assets/js/bootstrap-notify.js"/>
+			<!-- jquery-ui js -->
+			<add-attribute value="/client/assets/js/jquery-ui.min.js"/>
+			<!-- main js -->
+			<add-attribute value="/client/assets/js/main.js"/>
+		</put-list-attribute>
+	</definition>
+
+	<!-- Shop -->
+	<definition name="/shop" extends="baseLayout">
+		<put-attribute name="title" value="Shop"/>
+		<put-attribute name="body" value="/views/client/views/shop.jsp"/>
+	</definition>
 	
 </tiles-definitions>

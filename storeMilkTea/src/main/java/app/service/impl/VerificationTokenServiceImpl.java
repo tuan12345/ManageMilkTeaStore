@@ -8,6 +8,7 @@ import app.util.ConvertBeanToModel;
 import java.io.Serializable;
 
 public class VerificationTokenServiceImpl extends BaseServiceImpl implements VerificationTokenService {
+
     @Override
     public VerificationToken findById(Serializable key, boolean lock) {
         return null;

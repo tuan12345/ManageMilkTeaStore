@@ -20,11 +20,11 @@
 
     <beans:bean id="convertPasswordUtils" class="app.util.ConvertNewUserUtils"/>
 
-    <beans:bean id="jwtAuthenticationFilter" class="app.event.JwtAuthenticationTokenFilter">
+    <beans:bean id="jwtAuthenticationFilter" class="app.listener.JwtAuthenticationTokenFilter">
         <beans:property name="authenticationManager" ref="authenticationManager" />
     </beans:bean>
-    <http pattern="/user/login" security="none"/>
-    <http pattern="/user/**" auto-config="false" use-expressions="true"
+    <http pattern="/users/login" security="none"/>
+    <http pattern="/users/**" auto-config="false" use-expressions="true"
           create-session="stateless" entry-point-ref="servicesEntryPoint">
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
 

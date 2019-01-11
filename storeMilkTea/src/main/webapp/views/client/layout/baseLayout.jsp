@@ -216,8 +216,8 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="btn-group btn-group-justified">
-                                    <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
-                                    Google</a>
+                                    <a href="#" class="btn btn-primary">Facebook</a>
+                                    <a href="#" class="btn btn-danger">Google</a>
                                 </div>
                             </div>
                         </div>
@@ -228,6 +228,14 @@
     </div>
 </div>
 <!-- Start login and register -->
+
+<div class="popup-wrap">
+    <div class="popup-box">
+        <h2>Xác thực</h2>
+        <h3>Bạn cần vào email để xác thực</h3>
+        <a class="close-btn popup-close" href="#">x</a>
+    </div>
+</div>
 
 <!-- scripts -->
 <c:forEach var="script" items="${javascripts}">

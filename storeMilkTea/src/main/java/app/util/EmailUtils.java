@@ -9,6 +9,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.ui.velocity.VelocityEngineUtils;
+import org.springframework.web.context.request.WebRequest;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,14 +29,14 @@ public class EmailUtils {
     @Value("${spring.mail.form}")
     private String emailForm;
 
-    public void sendConfirmationEmail(final String email, final String token) {
+    public void sendConfirmationEmail(final String email, final String token, WebRequest request) {
         this.mailSender.send((mimeMessage) -> {
             MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
             message.setSubject("Verify email.");
             message.setTo(email);
             message.setFrom(emailForm);
             Map<String, Object> model = new HashMap<>();
-            model.put("actionUrl", "http://localhost:8080/registrationConfirm?token=" + token);
+            model.put("actionUrl", request.getHeader("Origin") + "/users/registrationConfirm?token=" + token);
             String text = geFreeMarkerTemplateContent(model);
             message.setText(text, true);
             logger.info("Send mail successfully to (" + email + ")");

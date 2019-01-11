@@ -26,4 +26,9 @@ public class HomeController extends BaseController {
 		return "/contact";
 	}
 
+    @GetMapping("/shop")
+    public ModelAndView shop(){
+        return new ModelAndView("/shop");
+    }
+
 }
