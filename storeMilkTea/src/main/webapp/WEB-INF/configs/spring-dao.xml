@@ -27,6 +27,12 @@
 			<ref bean="sessionFactory"/>
 		</property>
 	</bean>
+
+	<bean id="cartDetailDAO" class="app.dao.impl.CartDetailDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
 	
 	
 </beans>

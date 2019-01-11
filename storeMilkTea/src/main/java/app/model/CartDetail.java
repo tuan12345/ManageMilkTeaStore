@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 
 @Entity
@@ -20,6 +21,9 @@ public class CartDetail implements Serializable {
     private Integer id;
 
     private Integer quantity;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateCreated;
 
     @ManyToOne
     @JoinColumn(name = "productID")

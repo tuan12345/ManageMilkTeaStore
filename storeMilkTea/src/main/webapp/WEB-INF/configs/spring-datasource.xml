@@ -11,7 +11,12 @@
     <tx:annotation-driven proxy-target-class="true"
                           transaction-manager="transactionManager"/>
 
-    <context:property-placeholder location="classpath:datasources.properties, classpath:jwt.properties, classpath:verificationToken.properties, classpath:email.properties"/>
+    <context:property-placeholder location="
+    classpath:datasources.properties
+    , classpath:jwt.properties
+    , classpath:verificationToken.properties
+    , classpath:email.properties
+    , classpath:SpringExpiry.properties"/>
 
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
