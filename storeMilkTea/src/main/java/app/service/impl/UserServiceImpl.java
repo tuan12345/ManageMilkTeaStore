@@ -5,11 +5,16 @@ import app.model.User;
 import app.model.VerificationToken;
 import app.service.UserService;
 import app.util.ConvertBeanToModel;
+import app.util.ConvertModelToBean;
 import app.util.UserUtils;
+import org.hibernate.SessionFactory;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public class UserServiceImpl extends BaseServiceImpl implements UserService {
+
+
 
     @Override
     public UserInfo findById(Serializable key, boolean lock) {
@@ -43,68 +48,48 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
     }
 
     @Override
-    public User createNewUserAccount(UserInfo userInfo) {
+    public UserInfo createNewUserAccount(UserInfo userInfo) {
 
         try {
+            if (!UserUtils.checkFormatUser(userInfo))
+                return null;
 
-            if (UserUtils.checkFormatUser(userInfo)) {
+            if (!emailExist(userInfo.getEmail()))
+                return null;
 
-                if (emailExist(userInfo.getEmail())) {
-                    return userDAO.saveOrUpdate(convertNewUserUtils.convertNewUser(userInfo));
-                } else return null;
+            User user = userDAO.saveOrUpdate(convertNewUserUtils.convertNewUser(userInfo));
+            if (user == null)
+                return null;
 
-            } else return null;
+            String token = UUID.randomUUID().toString();
+            if (verificationTokenDAO.saveOrUpdate(new VerificationToken(token, user)) == null)
+                throw new NullPointerException("Can't generator Token for " + user.toString());
 
+            return ConvertModelToBean.mapUserToUserInfo(user);
         } catch (Exception e) {
             throw e;
         }
     }
 
     @Override
-    public User getUserByToken(String verificationToken) {
+    public UserInfo getUserByToken(String verificationToken) {
         try {
-            return verificationTokenDAO.findByToken(verificationToken).getUser();
+            return ConvertModelToBean
+                    .mapUserToUserInfo(verificationTokenDAO.findByToken(verificationToken).getUser());
 
         } catch (Exception e) {
             return null;
         }
     }
 
-    @Override
-    public VerificationToken createVerificationToken(UserInfo userInfo, String token) {
-        try {
-            VerificationToken myToken = new VerificationToken(token, convertNewUserUtils.convertNewUser(userInfo));
-            return verificationTokenDAO.saveOrUpdate(myToken);
 
-        } catch (Exception e) {
-            throw e;
-        }
-
-    }
-
-    @Override
-    public VerificationToken getVerificationToken(String verificationToken) {
-        try {
-            return verificationTokenDAO.findByToken(verificationToken);
-
-        } catch (Exception e) {
-            return null;
-
-        }
-    }
-
-    @Override
-    public User saveRegisteredUser(User user) {
-        try {
-            return userDAO.saveOrUpdate(user);
-
-        }catch (Exception e){
-            throw  e;
-        }
-    }
 
     private boolean emailExist(String email) {
-        return userDAO.loadUserByEmail(email) == null;
+        try {
+            return userDAO.loadUserByEmail(email) == null;
+        } catch (Exception e) {
+            return false;
+        }
 
     }
 

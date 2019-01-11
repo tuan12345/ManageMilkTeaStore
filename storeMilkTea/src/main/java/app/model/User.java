@@ -26,11 +26,12 @@ public class User implements Serializable {
     @NonNull
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "roleID")
-    private Role role;
+    @NonNull
+    private boolean enable;
 
-    private boolean enabled;
+    @ManyToOne
+    @JoinColumn(name = "roleID", referencedColumnName = "id")
+    private Role role;
 
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
     private VerificationToken verificationToken;

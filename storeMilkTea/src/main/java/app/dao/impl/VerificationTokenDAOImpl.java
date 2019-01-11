@@ -17,7 +17,10 @@ public class VerificationTokenDAOImpl extends GenericDAO<Integer, VerificationTo
 
     @Override
     public VerificationToken findByUser(User user) {
-        return getSession().load(User.class, user).getVerificationToken();
+        return getSession()
+                .createQuery("FROM VerificationToken v WHERE v.user = :user", VerificationToken.class)
+                .setParameter("user", user)
+                .uniqueResult();
     }
 
 }

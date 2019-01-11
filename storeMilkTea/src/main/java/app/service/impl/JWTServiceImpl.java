@@ -14,11 +14,11 @@ import org.springframework.beans.factory.annotation.Value;
 import java.util.Date;
 
 public class JWTServiceImpl implements JWTService {
-    @Value("${username}")
+    @Value("${spring.jwt.username}")
     private String username;
-    @Value("${expire.time}")
+    @Value("${spring.jwt.expire.time}")
     private int expireTime;
-    @Value("${secret.key}")
+    @Value("${spring.jwt.secret.key}")
     private String secretKey;
 
     @Override

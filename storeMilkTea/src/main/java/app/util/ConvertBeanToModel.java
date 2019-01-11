@@ -20,7 +20,9 @@ public class ConvertBeanToModel {
         Function<UserInfo, User> map = u -> new User(
                 u.getId(),
                 u.getEmail(),
-                u.getPassword());
+                u.getPassword(),
+                u.isEnable()
+                );
 
         return map.apply(userInfo);
     }
