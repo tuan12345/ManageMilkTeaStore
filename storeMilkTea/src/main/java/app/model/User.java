@@ -1,53 +1,33 @@
 package app.model;
 
-import lombok.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
-import java.io.Serializable;
-import java.util.List;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
-@AllArgsConstructor
-@RequiredArgsConstructor
-public class User implements Serializable {
+public class User {
 
-	@NonNull
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	@NonNull
-	private String email;
+    private String email;
 
-	@NonNull
-	private String password;
+    private String password;
 
-	@NonNull
-	private String fullName;
+    @ManyToOne
+    @JoinColumn(name = "roleID")
+    private Role role;
 
-	@NonNull
-	private String phone;
+    @OneToOne(mappedBy = "user",fetch = FetchType.LAZY)
+    private VerificationToken verificationToken;
 
-	@NonNull
-	private String gender;
+    @OneToOne(mappedBy = "user")
+    private Cart cart;
 
-	@NonNull
-	@ManyToOne
-	@JoinColumn(name = "roleID", nullable = false)
-	private Role role;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-	@Fetch(FetchMode.SELECT)
-	@OrderColumn
-	private List<Review> reviews;
-
-	@OneToOne(mappedBy = "user")
-	private Cart cart;
 }

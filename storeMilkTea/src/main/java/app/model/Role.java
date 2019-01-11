@@ -1,33 +1,24 @@
 package app.model;
 
-import lombok.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
-import java.io.Serializable;
-import java.util.List;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "roles")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
-@AllArgsConstructor
-@RequiredArgsConstructor
-public class Role implements Serializable {
+public class Role {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	@NonNull
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+    private String name;
 
-	@NonNull
-	private String name;
+    @OneToMany(mappedBy = "role")
+    private List<User> users;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "role")
-	@Fetch(FetchMode.SELECT)
-	@OrderColumn
-	private List<User> users;
 }

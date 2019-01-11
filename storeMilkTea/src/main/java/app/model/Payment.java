@@ -9,26 +9,24 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "reviews")
+@Table(name = "payment")
 @Data
 @NoArgsConstructor
-public class Review {
-
+public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String content;
+    private boolean status;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date atTime;
+    private Date paymentDate;
+
+    @OneToOne
+    @JoinColumn(name = "orderID")
+    private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "userID")
-    private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "productID")
-    private Product product;
+    @JoinColumn(name = "paymentMethodID")
+    private PaymentMethod paymentMethod;
 
 }

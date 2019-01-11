@@ -1,33 +1,28 @@
 package app.model;
 
-import lombok.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "categories")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
-@AllArgsConstructor
-@RequiredArgsConstructor
-public class Category implements Serializable {
+public class Category {
 
-    @NonNull
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NonNull
     private String name;
 
-    @OneToMany(mappedBy = "category")
-    @Fetch(FetchMode.SELECT)
-    @OrderColumn
-    private List<CategoryDetail> categoryDetails;
+    @ManyToOne
+    @JoinColumn(name = "parentID")
+    private Category parent;
+
+    @OneToMany(mappedBy = "parent")
+    private List<Category> categories;
 
 }
