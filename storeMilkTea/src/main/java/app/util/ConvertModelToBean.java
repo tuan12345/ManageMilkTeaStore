@@ -19,11 +19,7 @@ public class ConvertModelToBean {
         Function<User, UserInfo> map = u -> new UserInfo(
                 u.getId(),
                 u.getEmail(),
-                u.getPassword(),
-                u.getFullName(),
-                u.getPhone(),
-                u.getGender(),
-                mapRoleToRoleInfo(u.getRole()));
+                u.getPassword());
 
         return map.apply(user);
     }

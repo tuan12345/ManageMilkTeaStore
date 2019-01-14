@@ -4,13 +4,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "paymentMethods")
 @Data
 @NoArgsConstructor
-public class PaymentMethod {
+
+public class PaymentMethod implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

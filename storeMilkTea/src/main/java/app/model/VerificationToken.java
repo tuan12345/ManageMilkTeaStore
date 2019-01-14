@@ -1,17 +1,24 @@
 package app.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.Objects;
+import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Table(name = "verificationToken")
 @Data
 @NoArgsConstructor
-public class VerificationToken {
+public class VerificationToken implements Serializable {
+
+    @Value("${token.expiration}")
+    @Setter(AccessLevel.NONE)
+    @Getter(AccessLevel.NONE)
+    private int expiration;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +27,23 @@ public class VerificationToken {
     private String token;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Timestamp expiryDate;
+    private Date expiryDate;
 
     @OneToOne
     @JoinColumn(name = "userID")
     private User user;
+
+    private Date calculateExpiryDate(int expiryTimeInMinutes) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Timestamp(cal.getTime().getTime()));
+        cal.add(Calendar.MINUTE, expiryTimeInMinutes);
+        return new Date(cal.getTime().getTime());
+    }
+
+    public VerificationToken(String token, User user) {
+        this.expiryDate = calculateExpiryDate(expiration);
+        this.token = token;
+        this.user = user;
+    }
 
 }

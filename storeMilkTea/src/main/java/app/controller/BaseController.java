@@ -2,6 +2,7 @@ package app.controller;
 
 import app.service.JWTService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.security.core.context.SecurityContextHolder;
 
@@ -15,4 +16,6 @@ public class BaseController {
 	protected JWTService jwtService;
 	@Autowired
 	protected ReloadableResourceBundleMessageSource messageSource;
+	@Autowired
+	protected ApplicationEventPublisher eventPublisher;
 }

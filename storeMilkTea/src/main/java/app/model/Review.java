@@ -4,15 +4,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
 
 @Entity
 @Table(name = "reviews")
 @Data
 @NoArgsConstructor
-public class Review {
+
+public class Review implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

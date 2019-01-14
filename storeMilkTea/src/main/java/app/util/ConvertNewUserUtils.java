@@ -19,7 +19,6 @@ public class ConvertNewUserUtils {
         User newUser = new User();
         newUser.setEmail(userInfo.getEmail());
         newUser.setPassword(encoder.encode(userInfo.getPassword()));
-        newUser.setFullName(userInfo.getFullName());
         newUser.setRole(roleService.findByName("ROLE_CUSTOMER"));
 
         return newUser;

@@ -4,14 +4,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 @Entity
 @Table(name = "products")
 @Data
 @NoArgsConstructor
-public class Product {
+
+public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

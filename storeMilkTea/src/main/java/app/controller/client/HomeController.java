@@ -12,10 +12,9 @@ public class HomeController {
     private static final Logger logger = Logger.getLogger(HomeController.class);
 
     @GetMapping({"", "home"})
-    public ModelAndView index() {
+    public String index() {
         logger.info("home page");
-        ModelAndView model = new ModelAndView("home");
-        return model;
+        return "/home";
     }
 
     @GetMapping("/contact")

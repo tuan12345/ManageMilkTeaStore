@@ -15,4 +15,10 @@
 			<ref bean="sessionFactory"/>
 		</property>
 	</bean>
+
+	<bean id="verificationTokenDAO" class="app.dao.impl.VerificationTokenDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
 </beans>
