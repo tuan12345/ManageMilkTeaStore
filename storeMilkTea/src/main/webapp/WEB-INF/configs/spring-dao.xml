@@ -21,4 +21,12 @@
 			<ref bean="sessionFactory"/>
 		</property>
 	</bean>
+	
+	<bean id="productDAO" class="app.dao.impl.ProductDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	
 </beans>
