@@ -47,6 +47,6 @@
 		<bean parent="localeChangeInterceptor" />
 	</mvc:interceptors>
 
-
+	<bean id="emailUtils" class="app.util.EmailUtils" />
 
 </beans>

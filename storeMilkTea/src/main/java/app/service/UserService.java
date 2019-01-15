@@ -9,14 +9,8 @@ public interface UserService extends BaseService<Integer, UserInfo> {
 
     boolean checkLogin(UserInfo userInfo);
 
-    User createNewUserAccount(UserInfo userInfo);
+    UserInfo createNewUserAccount(UserInfo userInfo);
 
-    User getUserByToken(String verificationToken);
-
-    VerificationToken createVerificationToken(UserInfo userInfo, String token);
-
-    VerificationToken getVerificationToken(String VerificationToken);
-
-    User saveRegisteredUser(User user);
-
+    UserInfo getUserByToken(String verificationToken);
+    
 }

@@ -19,7 +19,9 @@ public class ConvertModelToBean {
         Function<User, UserInfo> map = u -> new UserInfo(
                 u.getId(),
                 u.getEmail(),
-                u.getPassword());
+                u.getPassword(),
+                u.isEnable()
+                );
 
         return map.apply(user);
     }

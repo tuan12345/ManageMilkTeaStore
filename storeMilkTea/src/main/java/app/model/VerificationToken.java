@@ -18,6 +18,7 @@ public class VerificationToken implements Serializable {
     @Value("${token.expiration}")
     @Setter(AccessLevel.NONE)
     @Getter(AccessLevel.NONE)
+    @Transient
     private int expiration;
 
     @Id
@@ -30,7 +31,7 @@ public class VerificationToken implements Serializable {
     private Date expiryDate;
 
     @OneToOne
-    @JoinColumn(name = "userID")
+    @JoinColumn(name = "userID", referencedColumnName = "id")
     private User user;
 
     private Date calculateExpiryDate(int expiryTimeInMinutes) {

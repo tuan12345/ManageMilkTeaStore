@@ -2,18 +2,17 @@ package app.controller.common;
 
 import app.bean.UserInfo;
 import app.controller.BaseController;
-import app.event.OnRegistrationCompleteEvent;
 import app.model.User;
 import app.model.VerificationToken;
+import app.util.ConvertBeanToModel;
+import app.util.ConvertModelToBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.WebRequest;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Calendar;
-import java.util.Locale;
 
 @Controller
 @RequestMapping("/user")
@@ -38,29 +37,22 @@ public class UserController extends BaseController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody UserInfo userInfo, WebRequest request) {
+    public ResponseEntity<String> register(@RequestBody UserInfo userInfo, HttpServletRequest request) {
 
-        User registered = userService.createNewUserAccount(userInfo);
+        UserInfo registered = userService.createNewUserAccount(userInfo);
         if (registered == null)
             return new ResponseEntity<>("fail", HttpStatus.NOT_ACCEPTABLE);
 
-        try {
-            String appUrl = request.getContextPath();
-            eventPublisher.publishEvent(new OnRegistrationCompleteEvent
-                    (registered, request.getLocale(), appUrl));
-        } catch (Exception me) {
-            return new ResponseEntity<>("fail", HttpStatus.NOT_ACCEPTABLE);
-        }
 
+        emailUtils.sendConfirmationEmail(registered.getEmail(),
+                verificationTokenService.getVerificationTokenbyUser(registered));
         return new ResponseEntity<>("successful", HttpStatus.OK);
     }
 
     @GetMapping("/registrationConfirm")
     public String confirmRegistration
             (@RequestParam("token") String token) {
-
-
-        VerificationToken verificationToken = userService.getVerificationToken(token);
+        VerificationToken verificationToken = verificationTokenService.getVerificationToken(token);
         if (verificationToken == null) {
             return "/confirm";
         }
@@ -71,8 +63,8 @@ public class UserController extends BaseController {
             return "/confirm";
         }
 
-        user.setEnabled(true);
-        userService.saveRegisteredUser(user);
+        user.setEnable(true);
+        userService.saveOrUpdate(ConvertModelToBean.mapUserToUserInfo(user));
         return "/confirm";
     }
 

@@ -11,7 +11,7 @@
     <tx:annotation-driven proxy-target-class="true"
                           transaction-manager="transactionManager"/>
 
-    <context:property-placeholder location="classpath:datasources.properties, classpath:jwt.properties, classpath:verificationToken.properties"/>
+    <context:property-placeholder location="classpath:datasources.properties, classpath:jwt.properties, classpath:verificationToken.properties, classpath:email.properties"/>
 
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -21,7 +21,6 @@
         <property name="password" value="${mysql.password}"/>
     </bean>
 
-    <!-- Hibernate session factory -->
     <!-- Hibernate session factory -->
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
@@ -38,8 +37,6 @@
                 <prop key="hbm2ddl.auto">update</prop>
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
                 <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/bubbleTeaStore</prop>
-                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
             </props>
         </property>
 
@@ -90,6 +87,37 @@
                 <prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
             </props>
         </property>
+    </bean>
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <!-- SMTP settings -->
+        <property name="host" value="${spring.mail.host}" />
+        <property name="port" value="${spring.mail.port}" />
+        <property name="username" value="${spring.mail.username}" />
+        <property name="password" value="${spring.mail.password}" />
+        <property name="javaMailProperties">
+            <!-- additional properties specific to JavaMail -->
+            <props>
+                <prop key="mail.transport.protocol">${spring.mail.transport.protocol}</prop>
+                <prop key="mail.smtp.auth">${spring.mail.smtp.auth}</prop>
+                <prop key="mail.smtp.starttls.enable">${spring.mail.smtp.starttls.enable}</prop>
+                <prop key="mail.debug">${spring.mail.debug}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+        <property name="velocityProperties">
+            <value>
+                resource.loader=class
+                class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+            </value>
+        </property>
+    </bean>
+
+    <bean id="freeMarkerConfigurationFactory" class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+        <property name="templateLoaderPath" value="classpath:/templates/"/>
+        <property name="preferFileSystemAccess" value="false"/>
     </bean>
 
 </beans>
