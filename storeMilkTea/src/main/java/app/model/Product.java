@@ -23,7 +23,7 @@ public class Product implements Serializable {
 
     private BigDecimal price;
 
-    private boolean status;
+    private Integer status;
 
     @ManyToOne
     @JoinColumn(name = "categoryID")

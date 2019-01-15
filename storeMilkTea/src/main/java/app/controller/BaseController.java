@@ -1,6 +1,7 @@
 package app.controller;
 
 import app.service.JWTService;
+import app.service.ProductService;
 import app.service.UserService;
 import app.service.VerificationTokenService;
 import app.util.EmailUtils;
@@ -18,6 +19,8 @@ public class BaseController {
     protected EmailUtils emailUtils;
     @Autowired
     protected VerificationTokenService verificationTokenService;
+    @Autowired
+    protected ProductService productService;
 
 
 }

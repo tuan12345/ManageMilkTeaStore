@@ -6,20 +6,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import app.controller.BaseController;
+
 @Controller
 @RequestMapping(value = "/")
-public class HomeController {
-    private static final Logger logger = Logger.getLogger(HomeController.class);
+public class HomeController extends BaseController {
+	private static final Logger logger = Logger.getLogger(HomeController.class);
 
-    @GetMapping({"", "home"})
-    public String index() {
-        logger.info("home page");
-        return "/home";
-    }
+	@GetMapping({ "", "home" })
+	public ModelAndView index() {
+		ModelAndView modelAndView = new ModelAndView("/home");
+		modelAndView.addObject("productInfos", productService.loadAllProduct());
+		logger.info("home page");
+		return modelAndView;
+	}
 
-    @GetMapping("/contact")
-    public String contact() {
-        return "/contact";
-    }
+	@GetMapping("/contact")
+	public String contact() {
+		return "/contact";
+	}
 
 }

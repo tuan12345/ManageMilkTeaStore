@@ -28,5 +28,8 @@ public class Category implements Serializable {
 
     @OneToMany(mappedBy = "parent")
     private List<Category> categories;
+    
+    @OneToMany(mappedBy="category")
+    private List<Product> products;
 
 }
