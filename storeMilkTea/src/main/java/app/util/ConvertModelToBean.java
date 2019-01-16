@@ -22,8 +22,13 @@ public class ConvertModelToBean {
 		return map.apply(role);
 	}
 
-	public static UserInfo mapUserToUserInfo(User user) {
-		Function<User, UserInfo> map = u -> new UserInfo(u.getId(), u.getEmail(), u.getPassword(), u.isEnable());
+    public static UserInfo mapUserToUserInfo(User user) {
+        Function<User, UserInfo> map = u -> new UserInfo(
+                u.getId(),
+                u.getEmail(),
+                u.getPassword(),
+                u.isEnable()
+                );
 
 		return map.apply(user);
 	}

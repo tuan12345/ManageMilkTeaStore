@@ -217,18 +217,67 @@
         delete Data['confirmPassword'];
         $.ajax({
             type: "POST",
-            url: "/user/register",
+            url: "/users/register",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(Data),
             success: function (data) {
-                window.alert("sssss")
+                $.fn.popupConfirm();
             },
             error: function (data) {
-                window.alert("aaaa")
+                $.fn.errorRegisterNotification();
             }
         });
         e.preventDefault();
     });
 
+    $.fn.popupConfirm = function(){
+        $('.popup-wrap').fadeIn(500);
+        $('.popup-box').removeClass('transform-out').addClass('transform-in');
 
-})(jQuery); 
+    };
+
+    $('#popup-confirm-token').load(function () {
+        $('.popup-wrap').fadeIn(500);
+        $('.popup-box').removeClass('transform-out').addClass('transform-in');
+        let statusMessages = $('#token-status').val();
+        $('#token-title').text(statusMessages);
+        if (statusMessages == "Expired"){
+            $('#bt-create-token').show();
+            $('#bt-success').hide();
+        }
+    });
+
+    $('.popup-btn').click(function(e) {
+        $('.popup-wrap').fadeIn(500);
+        $('.popup-box').removeClass('transform-out').addClass('transform-in');
+
+        e.preventDefault();
+    });
+
+    $('.popup-close').click(function(e) {
+        $('.popup-wrap').fadeOut(500);
+        $('.popup-box').removeClass('transform-in').addClass('transform-out');
+
+        e.preventDefault();
+    });
+
+
+    $.fn.errorRegisterNotification = function() {
+
+        $.notify({
+            icon: "tim-icons icon-bell-55",
+            message: "Khong th tao tai khoan"
+
+        }, {
+            type: 'danger',
+            timer: 3000,
+            placement: {
+                from: 'top',
+                align: 'right'
+            }
+        });
+    }
+     // ['primary', 'info', 'success', 'warning', 'danger'];
+})(jQuery);
+
+

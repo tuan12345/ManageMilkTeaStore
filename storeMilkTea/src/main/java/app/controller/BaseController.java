@@ -22,5 +22,4 @@ public class BaseController {
     @Autowired
     protected ProductService productService;
 
-
 }

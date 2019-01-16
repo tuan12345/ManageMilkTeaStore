@@ -7,14 +7,13 @@ import app.service.UserService;
 import app.util.ConvertBeanToModel;
 import app.util.ConvertModelToBean;
 import app.util.UserUtils;
-import org.hibernate.SessionFactory;
+import org.apache.log4j.Logger;
 
 import java.io.Serializable;
 import java.util.UUID;
 
 public class UserServiceImpl extends BaseServiceImpl implements UserService {
-
-
+    private static final Logger logger = Logger.getLogger(UserServiceImpl.class);
 
     @Override
     public UserInfo findById(Serializable key, boolean lock) {
@@ -24,8 +23,17 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 
     @Override
     public UserInfo saveOrUpdate(UserInfo entity) {
-        // TODO Auto-generated method stub
-        return null;
+        try {
+            User user = userDAO.findById(entity.getId());
+            user.setEnable(entity.isEnable());
+            return ConvertModelToBean
+                    .mapUserToUserInfo(userDAO
+                            .saveOrUpdate(user));
+
+        } catch (Exception e) {
+            logger.error("Hibernate exception " + e.getMessage());
+            throw e;
+        }
     }
 
     @Override
@@ -41,7 +49,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 
             return userDAO.checkLogin(ConvertBeanToModel.mapUserInfoToUser(userInfo));
         } catch (Exception e) {
-
+            logger.error("Hibernate exception " + e.getMessage());
             return false;
         }
 
@@ -67,6 +75,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 
             return ConvertModelToBean.mapUserToUserInfo(user);
         } catch (Exception e) {
+            logger.error("Hibernate exception " + e.getMessage());
             throw e;
         }
     }
@@ -78,16 +87,17 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
                     .mapUserToUserInfo(verificationTokenDAO.findByToken(verificationToken).getUser());
 
         } catch (Exception e) {
+            logger.error("Hibernate exception " + e.getMessage());
             return null;
         }
     }
-
 
 
     private boolean emailExist(String email) {
         try {
             return userDAO.loadUserByEmail(email) == null;
         } catch (Exception e) {
+            logger.error("Hibernate exception " + e.getMessage());
             return false;
         }
 

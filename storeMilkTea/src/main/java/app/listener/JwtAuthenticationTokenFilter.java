@@ -1,4 +1,4 @@
-package app.event;
+package app.listener;
 
 import app.dao.UserDAO;
 import app.service.JWTService;
