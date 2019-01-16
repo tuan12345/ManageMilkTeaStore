@@ -1,5 +1,6 @@
 package app.controller;
 
+import app.service.CategoryService;
 import app.service.JWTService;
 import app.service.ProductService;
 import app.service.UserService;
@@ -21,5 +22,8 @@ public class BaseController {
     protected VerificationTokenService verificationTokenService;
     @Autowired
     protected ProductService productService;
+    @Autowired 
+    protected CategoryService categoryService;
+
 
 }

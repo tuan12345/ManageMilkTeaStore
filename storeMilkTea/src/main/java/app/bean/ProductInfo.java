@@ -13,6 +13,5 @@ public class ProductInfo {
 	private String image;
 	private BigDecimal price;
 	private Integer status;
-	private CategoryInfo categoryInfo;
 
 }

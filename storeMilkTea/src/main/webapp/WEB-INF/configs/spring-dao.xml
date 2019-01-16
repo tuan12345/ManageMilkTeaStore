@@ -6,25 +6,25 @@
 
 	<bean id="userDAO" class="app.dao.impl.UserDAOImpl">
 		<property name="sessionFactory">
-			<ref bean="sessionFactory"/>
+			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 
 	<bean id="roleDAO" class="app.dao.impl.RoleDAOImpl">
 		<property name="sessionFactory">
-			<ref bean="sessionFactory"/>
+			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 
 	<bean id="verificationTokenDAO" class="app.dao.impl.VerificationTokenDAOImpl">
 		<property name="sessionFactory">
-			<ref bean="sessionFactory"/>
+			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	
+
 	<bean id="productDAO" class="app.dao.impl.ProductDAOImpl">
 		<property name="sessionFactory">
-			<ref bean="sessionFactory"/>
+			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 
@@ -33,6 +33,11 @@
 			<ref bean="sessionFactory"/>
 		</property>
 	</bean>
-	
-	
+
+	<bean id="categoryDAO" class="app.dao.impl.CategoryDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
 </beans>
