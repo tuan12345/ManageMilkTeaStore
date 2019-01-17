@@ -31,11 +31,39 @@ public class ProductServiceImpl extends BaseServiceImpl implements ProductServic
 	public List<ProductInfo> loadAllProduct() {
 		try {
 			return ConvertModelToBean.mapProductsToProductInfo(productDAO.loadAllProduct());
-			
+
 		} catch (Exception e) {
 			return null;
 		}
-		
+
+	}
+
+	@Override
+	public Long page(Long countProduct, Integer maxResult) {
+
+		return (maxResult >= countProduct) ? 1
+				: ((countProduct % maxResult == 0) ? (countProduct / maxResult) : (countProduct / maxResult + 1));
+
+	}
+
+	@Override
+	public List<ProductInfo> loadProductByPage(Integer page, Integer maxResult) {
+		try {
+			return ConvertModelToBean.mapProductsToProductInfo(productDAO.loadProductByPage(page, maxResult));
+		} catch (Exception e) {
+			return null;
+		}
+
+	}
+
+	@Override
+	public Long count() {
+		try {
+			return productDAO.count();
+		} catch (Exception e) {
+			return null;
+		}
+
 	}
 
 }

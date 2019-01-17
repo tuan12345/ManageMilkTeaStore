@@ -24,22 +24,10 @@ public class HomeController extends BaseController {
 		return modelAndView;
 	}
 
-	@GetMapping("/shop")
-	public ModelAndView shop() {
-		ModelAndView model = new ModelAndView("/shop");
-		List<CategoryInfo> categories = categoryService.loadAllCategory();
-		model.addObject("categoryInfos", categories);
-		return model;
-	}
-
 	@GetMapping("/contact")
 	public String contact() {
 		return "/contact";
 	}
 
-	@GetMapping("/shop")
-	public ModelAndView shop() {
-		return new ModelAndView("/shop");
-	}
 
 }

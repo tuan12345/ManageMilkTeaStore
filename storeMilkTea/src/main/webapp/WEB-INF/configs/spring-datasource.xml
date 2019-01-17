@@ -49,7 +49,6 @@
         <property name="annotatedClasses">
             <list>
                 <value>app.model.CartDetail</value>
-                <value>app.model.CartDetail</value>
                 <value>app.model.Cart</value>
                 <value>app.model.Category</value>
                 <value>app.model.Delivery</value>
