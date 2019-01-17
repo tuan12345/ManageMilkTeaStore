@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- shop-area start -->
 <div class="shop-area">
     <div class="container">
@@ -16,11 +19,9 @@
                 <aside class="widget widget-categories">
                     <h3 class="sidebar-title">Categories</h3>
                     <ul class="sidebar-menu">
-                        <li><a href="#">Clothes</a> <span class="count">(14)</span></li>
-                        <li><a href="#">Men</a> <span class="count">(9)</span></li>
-                        <li><a href="#">Shoes</a> <span class="count">(2)</span></li>
-                        <li><a href="#">Sunglasses</a> <span class="count">(2)</span></li>
-                        <li><a href="#">Women</a> <span class="count">(8)</span></li>
+                    <c:forEach items="${categoryInfos }" var="categoryInfo">
+                        <li><a href="#">${categoryInfo.name }</a> <span class="count">(${categoryInfo.productInfos.size() })</span></li>
+                        </c:forEach>
                     </ul>
                 </aside>
                 <!-- widget-categories end -->

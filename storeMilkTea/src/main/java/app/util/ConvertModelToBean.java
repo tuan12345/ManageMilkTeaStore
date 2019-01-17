@@ -1,5 +1,9 @@
 package app.util;
 
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 import app.bean.CategoryInfo;
 import app.bean.ProductInfo;
 import app.bean.RoleInfo;
@@ -8,11 +12,6 @@ import app.model.Category;
 import app.model.Product;
 import app.model.Role;
 import app.model.User;
-
-import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 public class ConvertModelToBean {
 
@@ -34,13 +33,17 @@ public class ConvertModelToBean {
 	}
 
 	public static CategoryInfo mapCategoryToCategoryInfo(Category category) {
-		Function<Category, CategoryInfo> map = c -> new CategoryInfo(c.getId(), c.getName());
+		Function<Category, CategoryInfo> map = c -> new CategoryInfo(c.getId(), c.getName(),mapProductsToProductInfo(c.getProducts()));
 		return map.apply(category);
 	}
 
+	public static List<CategoryInfo> mapCategoriesToCategoriesInfos(List<Category> categories) {
+		Function<Category, CategoryInfo> mapCategories = c -> new CategoryInfo(c.getId(), c.getName(),mapProductsToProductInfo(c.getProducts()));
+		return categories.stream().map(mapCategories).collect(Collectors.toList());
+	}
+
 	public static List<ProductInfo> mapProductsToProductInfo(List<Product> products) {
-		Function<Product, ProductInfo> map = p -> new ProductInfo(p.getId(), p.getName(), p.getImage(), p.getPrice(),
-				p.getStatus(), mapCategoryToCategoryInfo(p.getCategory()));
-		return products.stream().map(map).collect(Collectors.toList());
+		Function<Product, ProductInfo> mapProductToProductInfo = p -> new ProductInfo(p.getId(), p.getName(), p.getImage(), p.getPrice(),p.getStatus());
+		return products.stream().map(mapProductToProductInfo).collect(Collectors.toList());
 	}
 }

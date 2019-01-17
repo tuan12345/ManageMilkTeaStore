@@ -8,31 +8,35 @@
 		<put-attribute name="title" value="" />
 		<put-attribute name="header" value="/views/client/layout/header.jsp" />
 		<put-attribute name="slider" value="" />
-		<put-attribute name="breadcrumb" value="/views/client/layout/breadcrumb.jsp" />
+		<put-attribute name="breadcrumb"
+			value="/views/client/layout/breadcrumb.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/views/client/layout/footer.jsp" />
 		<put-list-attribute name="stylesheets">
-			<!--     Fonts and icons     -->
-			<add-attribute value="https://fonts.googleapis.com/css?family=Lato:400,300,700,900"/>
-			<add-attribute value="https://fonts.googleapis.com/css?family=Raleway:400,500,700,300,800"/>
-			<add-attribute value="https://use.fontawesome.com/releases/v5.0.6/css/all.css"/>
+			<!-- Fonts and icons -->
+			<add-attribute
+				value="https://fonts.googleapis.com/css?family=Lato:400,300,700,900" />
+			<add-attribute
+				value="https://fonts.googleapis.com/css?family=Raleway:400,500,700,300,800" />
+			<add-attribute
+				value="https://use.fontawesome.com/releases/v5.0.6/css/all.css" />
 			<!-- all css here -->
 			<!-- bootstrap v3.3.6 css -->
-			<add-attribute value="/client/assets/css/bootstrap.min.css"/>
+			<add-attribute value="/client/assets/css/bootstrap.min.css" />
 			<!-- animate css -->
-			<add-attribute value="/client/assets/css/animate.css"/>
+			<add-attribute value="/client/assets/css/animate.css" />
 			<!-- jquery-ui.min css -->
-			<add-attribute value="/client/assets/css/jquery-ui.min.css"/>
+			<add-attribute value="/client/assets/css/jquery-ui.min.css" />
 			<!-- meanmenu css -->
-			<add-attribute value="/client/assets/css/meanmenu.min.css"/>
+			<add-attribute value="/client/assets/css/meanmenu.min.css" />
 			<!-- owl.carousel css -->
-			<add-attribute value="/client/assets/css/owl.carousel.css"/>
+			<add-attribute value="/client/assets/css/owl.carousel.css" />
 			<!-- nivo-slider css -->
-			<add-attribute value="/client/assets/lib/css/nivo-slider.css"/>
+			<add-attribute value="/client/assets/lib/css/nivo-slider.css" />
 			<!-- style css -->
-			<add-attribute value="/client/assets/style.css"/>
+			<add-attribute value="/client/assets/style.css" />
 			<!-- responsive css -->
-			<add-attribute value="/client/assets/css/responsive.css"/>
+			<add-attribute value="/client/assets/css/responsive.css" />
 		</put-list-attribute>
 		<put-list-attribute name="javascripts">
 			<!-- all js here -->
@@ -42,20 +46,20 @@
 			<add-attribute value="/client/assets/js/bootstrap.min.js"/>
 			<add-attribute value="/client/assets/js/bootstrap-notify.js"/>
 			<!-- owl.carousel js -->
-			<add-attribute value="/client/assets/js/owl.carousel.min.js"/>
+			<add-attribute value="/client/assets/js/owl.carousel.min.js" />
 			<!-- meanmenu js -->
-			<add-attribute value="/client/assets/js/jquery.meanmenu.js"/>
+			<add-attribute value="/client/assets/js/jquery.meanmenu.js" />
 			<!-- jquery-ui js -->
-			<add-attribute value="/client/assets/js/jquery-ui.min.js"/>
+			<add-attribute value="/client/assets/js/jquery-ui.min.js" />
 			<!-- nivo.slider js -->
-			<add-attribute value="/client/assets/lib/js/jquery.nivo.slider.pack.js"/>
-			<add-attribute value="/client/assets/lib/js/nivo-active.js"/>
+			<add-attribute value="/client/assets/lib/js/jquery.nivo.slider.pack.js" />
+			<add-attribute value="/client/assets/lib/js/nivo-active.js" />
 			<!-- wow js -->
-			<add-attribute value="/client/assets/js/wow.min.js"/>
+			<add-attribute value="/client/assets/js/wow.min.js" />
 			<!-- plugins js -->
-			<add-attribute value="/client/assets/js/plugins.js"/>
+			<add-attribute value="/client/assets/js/plugins.js" />
 			<!-- main js -->
-			<add-attribute value="/client/assets/js/main.js"/>
+			<add-attribute value="/client/assets/js/main.js" />
 		</put-list-attribute>
 	</definition>
 
@@ -73,12 +77,13 @@
 
 	<!-- Contact -->
 	<definition name="/contact" extends="baseLayout">
-		<put-attribute name="title" value="Contact"/>
+		<put-attribute name="title" value="Contact" />
 		<put-attribute name="body" value="/views/client/views/contact.jsp" />
 		<put-list-attribute name="javascripts" inherit="true">
 			<!-- Google Map js -->
-			<add-attribute value="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYKTlxU91APw7XNBzoYAsfStOihO-0bqM"/>
-			<add-attribute value="/client/assets/js/current/contact.js"/>
+			<add-attribute
+				value="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYKTlxU91APw7XNBzoYAsfStOihO-0bqM" />
+			<add-attribute value="/client/assets/js/current/contact.js" />
 		</put-list-attribute>
 	</definition>
 
@@ -114,5 +119,4 @@
 		<put-attribute name="title" value="Shop"/>
 		<put-attribute name="body" value="/views/client/views/shop.jsp"/>
 	</definition>
-	
 </tiles-definitions>
